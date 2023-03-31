@@ -21,12 +21,40 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            this.rb.AddForce(this.northExit.transform.position * movementSpeed);
+            if(MasterData.moveYet == false)
+            {
+                this.rb.AddForce(this.northExit.transform.position * movementSpeed);
+                MasterData.moveYet = true;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (MasterData.moveYet == false)
+            {
+                this.rb.AddForce(this.southExit.transform.position * movementSpeed);
+                MasterData.moveYet = true;
+            }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            MasterData.count++;
-            SceneManager.LoadScene("DungeonRoom");
+            if (MasterData.moveYet == false)
+            {
+                this.rb.AddForce(this.westExit.transform.position * movementSpeed);
+                MasterData.moveYet = true;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (MasterData.moveYet == false)
+            {
+                this.rb.AddForce(this.eastExit.transform.position * movementSpeed);
+                MasterData.moveYet = true;
+            }
+        }
+        //if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            //MasterData.count++;
+            //SceneManager.LoadScene("DungeonRoom");
         }
     }
 }
