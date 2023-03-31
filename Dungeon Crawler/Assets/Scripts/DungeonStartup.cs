@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DungeonStartup : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class DungeonStartup : MonoBehaviour
     public GameObject eastExit;
     public GameObject westExit;
     public bool northOn, southOn, eastOn, westOn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,6 @@ public class DungeonStartup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 }
