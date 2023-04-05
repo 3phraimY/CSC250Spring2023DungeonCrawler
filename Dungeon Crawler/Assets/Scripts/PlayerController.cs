@@ -108,6 +108,13 @@ public class PlayerController : MonoBehaviour
             //}
             //this.rb.MovePosition(this.transform.position + spaceInbetween.normalized * this.movementSpeed * Time.deltaTime);
             this.rb.MovePosition(new Vector3(0,0.5f,0));
+            //this.rb.AddForce(new Vector3(0, 0.5f, 0) * Time.deltaTime);
+
+
         }
+        /*else
+        {
+            this.rb.velocity = Vector3.zero;
+        }*/
     }
 }
