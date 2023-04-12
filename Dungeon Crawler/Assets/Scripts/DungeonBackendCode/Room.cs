@@ -22,6 +22,10 @@ public int getNumberOfPlayers()
     return this.currentNumberOfPlayers;
 }
 
+public string getName()
+    {
+        return this.name;
+    }
 public bool hasExit(string direction)
 {
     for (int i = 0; i < this.numberOfExits; i++)

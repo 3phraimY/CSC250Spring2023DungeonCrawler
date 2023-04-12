@@ -12,7 +12,6 @@ public class Dungeon
         this.theRooms = new Room[maxRooms];
         this.currentNumberOfRooms = 0;
         this.startingRoom = null;
-
     }
 
     public void addPlayer(Player p)

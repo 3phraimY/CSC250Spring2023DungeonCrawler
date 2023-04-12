@@ -810,7 +810,7 @@ MonoBehaviour:
   southExit: {fileID: 431023155}
   eastExit: {fileID: 262587833}
   westExit: {fileID: 1667403121}
-  northOn: 0
+  northOn: 1
   southOn: 1
   eastOn: 1
   westOn: 1

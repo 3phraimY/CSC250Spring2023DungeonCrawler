@@ -61,18 +61,22 @@ public class PlayerController : MonoBehaviour
             if (other.gameObject == this.northExit)
             {
                 MasterData.whereDidIComeFrom = "north";
+                MasterData.p.getCurrentRoom().takeExit(MasterData.p,"north");
             }
             else if (other.gameObject == this.southExit)
             {
                 MasterData.whereDidIComeFrom = "south";
+                MasterData.p.getCurrentRoom().takeExit(MasterData.p, "south");
             }
             else if (other.gameObject == this.eastExit)
             {
                 MasterData.whereDidIComeFrom = "east";
+                MasterData.p.getCurrentRoom().takeExit(MasterData.p, "east");
             }
             else if (other.gameObject == this.westExit)
             {
                 MasterData.whereDidIComeFrom = "west";
+                MasterData.p.getCurrentRoom().takeExit(MasterData.p, "west");
             }
             MasterData.isExiting = false;
             SceneManager.LoadScene("DungeonRoom");
@@ -86,22 +90,22 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && this.isMoving == false)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && this.isMoving == false && northExit.activeInHierarchy)
         {
             this.rb.AddForce(this.northExit.transform.position * movementSpeed);
             this.isMoving = true;
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && this.isMoving == false)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && this.isMoving == false && westExit.activeInHierarchy)
         {
             this.rb.AddForce(this.westExit.transform.position * movementSpeed);
             this.isMoving = true;
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && this.isMoving == false)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && this.isMoving == false && eastExit.activeInHierarchy)
         {
             this.rb.AddForce(this.eastExit.transform.position * movementSpeed);
             this.isMoving = true;
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow) && this.isMoving == false)
+        if (Input.GetKeyDown(KeyCode.DownArrow) && this.isMoving == false && southExit.activeInHierarchy)
         {
             this.rb.AddForce(this.southExit.transform.position * movementSpeed);
             this.isMoving = true;
