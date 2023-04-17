@@ -1,13 +1,13 @@
 using System;
+using Unity.VisualScripting;
 
-public class Player
+public class Player : Inhabitant
 {
-    private string name;
     private Room currentRoom;
 
-    public Player(string name)
+    public Player(string name) : base(name)
     {
-        this.name = name;
+        
     }
 
     public Room getCurrentRoom()
