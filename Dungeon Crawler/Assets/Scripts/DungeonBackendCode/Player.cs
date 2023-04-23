@@ -9,7 +9,10 @@ public class Player : Inhabitant
     {
         
     }
+    /*public Player(int hp) : base.setHP(hp)
+    {
 
+    }*/
     public Room getCurrentRoom()
     {
         return this.currentRoom;
@@ -24,9 +27,6 @@ public class Player : Inhabitant
     }
 
     //getter (accessor) for read only access to the private field name
-    public string getName()
-    {
-        return this.name;
-    }
+    
 
 }
